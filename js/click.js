@@ -9,6 +9,7 @@ if (!cookieStorage.getItem('plus'))
     cookieStorage.setItem('plus', '1')
 
 plus = parseInt(cookieStorage.getItem('plus'))
+document.getElementById("plus").innerHTML = plus
 
 setInterval(() => {
     cookieStorage.setItem('plus', plus)
@@ -33,6 +34,17 @@ document.getElementById("upgrades1").innerHTML = upgrades1
 setInterval(() => {
     cookieStorage.setItem('upgrades1', upgrades1)
 }, 10000);
+
+if (!cookieStorage.getItem('upgrades2'))
+    cookieStorage.setItem('upgrades2', '0')
+
+upgrades2 = parseInt(cookieStorage.getItem('upgrades2'))
+document.getElementById("upgrades2").innerHTML = upgrades2
+
+setInterval(() => {
+    cookieStorage.setItem('upgrades2', upgrades2)
+}, 10000);
+
 
 
 // Функции кнопок
@@ -62,11 +74,28 @@ back.addEventListener('click', event => {
     document.getElementById("upgback").style.display='none'  
 })
 
+// Кнопки улучшений
+
 const upgr1 = document.getElementById('upgrade1')
 upgr1.addEventListener('click', event => {
-    clicks-=10 
-    console.log('alle')
-    plus += 2
-    upgrades1 +=1
-    document.getElementById("upgrades1").innerHTML = upgrades1
+    if (clicks >= 10){
+        clicks-=10 
+        plus += 2
+        upgrades1 +=1
+        document.getElementById("upgrades1").innerHTML = upgrades1
+        document.getElementById("plus").innerHTML = plus
+        document.getElementById("clicks").innerHTML = clicks
+    }
+})
+
+const upgr2 = document.getElementById('upgrade2')
+upgr2.addEventListener('click', event => {
+    if (clicks >= 20000){
+        clicks-=20000
+        plus += 10000
+        upgrades2 +=1
+        document.getElementById("upgrades2").innerHTML = upgrades2
+        document.getElementById("plus").innerHTML = plus
+        document.getElementById("clicks").innerHTML = clicks
+    } 
 })
