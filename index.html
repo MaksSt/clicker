@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>clicker</title>
-<link rel="stylesheet" href="css/style.css">
+    <title>clicker</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <button id="upgback" class="upgback">Back</button>
     <button id="upg" class="upg">Upgrade menu</button>
@@ -13,6 +15,7 @@
     <center>
         <p class="clicks" id="cl">Clicks: <a id="clicks">0</a></p>
         <p class="plus">1 click = <a id="plus">0</a></p>
+        <p class="plus">Miner(clicks/s) = <a id="miners1">0</a></p>
         <button class="clme" id="clicker">Click me</button>
 
     </center>
@@ -24,13 +27,26 @@
             <button class="upg1" id="upgrade1">click</button>
         </div>
         <div class="upgs">
+            <p>Miner</p>
+            <p class="prib">+250/s</p>
+            <p class="price">Price: 5000</p>
+            <button class="upg1" id="miner1">click</button>
+        </div>
+        <div class="upgs">
             <p>Upgrade 2</p>
             <p class="prib">+10000</p>
             <p class="price">Price: 20000</p>
             <button class="upg1" id="upgrade2">click</button>
         </div>
+        <div class="upgs">
+            <p>Miner 2</p>
+            <p class="prib">+25000/s</p>
+            <p class="price">Price: 30000</p>
+            <button class="upg1" id="miner2">click</button>
+        </div>
     </div>
 </body>
 
 <script type="text/javascript" src="js/click.js"></script>
+
 </html>
